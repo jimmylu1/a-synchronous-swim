@@ -1,0 +1,15 @@
+Swim team css holds the swim team's location and direction
+    the server does not
+    the server would not receive updates to team location because it can't do anything with them
+    but the server does send updates to the client
+    and the client will send a photo to the server, which the server will tell the client to display
+
+
+Messages
+    maybe: a list of messages waiting to be sent to the client
+        pushed when inserted by the Node process
+        popped when the server is ready to send them to the client or when the server 
+            gets confirmation that the client heard and handled the latest one
+    maybe: a list of messages sent from the client
+
+
