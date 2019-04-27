@@ -20,7 +20,7 @@
       type: 'POST',
       url: serverUrl,
       data: command,
-      success: (data) => console.log(data),
+      success: (data) => getNextCommand(),
       error: (err) => console.log(err),
       cache: false,
       contentType: false,
@@ -30,8 +30,17 @@
 
   //  when client presses direction keys
   $('#randomGet').on('click', function(event) {
-    sendCommand('testing');
+    sendCommand('left');
     //  moving swimmers with getNextCommand();
+  });
+
+
+  $('body').on('keydown', (event) => {
+    var arrowPress = event.key.match(/Arrow(Up|Down|Left|Right)/);
+    if (arrowPress) {
+      var direction = arrowPress[1];
+      sendCommand(direction.toLowerCase());
+    }
   });
   
   /////////////////////////////////////////////////////////////////////
