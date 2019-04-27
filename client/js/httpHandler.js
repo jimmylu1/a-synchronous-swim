@@ -6,7 +6,7 @@
 
   
   const serverUrl = 'http://127.0.0.1:3000';
-  const test = () => {
+  const getNextCommand = () => {
     $.get({
       url: serverUrl,
       data: {},
@@ -15,8 +15,23 @@
     })
   };
 
+  const sendCommand = (command) => {
+    $.ajax({
+      type: 'POST',
+      url: serverUrl,
+      data: command,
+      success: (data) => console.log(data),
+      error: (err) => console.log(err),
+      cache: false,
+      contentType: false,
+      processData: false,
+    });
+  };
+
+  //  when client presses direction keys
   $('#randomGet').on('click', function(event) {
-    test();
+    sendCommand('testing');
+    //  moving swimmers with getNextCommand();
   });
   
   /////////////////////////////////////////////////////////////////////
