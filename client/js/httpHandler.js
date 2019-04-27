@@ -48,13 +48,13 @@
   // Note: remember to fix the URL below.
   /////////////////////////////////////////////////////////////////////
 
-  const ajaxFileUplaod = (file) => {
+  const ajaxFileUpload = (file) => {
     var formData = new FormData();
     formData.append('file', file);
     $.ajax({
       type: 'POST',
       data: formData,
-      url: serverURL,
+      url: serverUrl + '/poolImage',
       cache: false,
       contentType: false,
       processData: false,
@@ -80,7 +80,7 @@
       return;
     }
 
-    ajaxFileUplaod(file);
+    ajaxFileUpload(file);
   });
 
 })();
