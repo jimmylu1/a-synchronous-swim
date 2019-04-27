@@ -35,6 +35,7 @@ const SwimTeam = {
       return false;
     }
     if (['left', 'right', 'up', 'down'].indexOf(direction) < 0 ) {
+      console.log(typeof direction);
       console.log(`Ignoring command: ${direction}`);
       return false;
     }

@@ -9,9 +9,12 @@ module.exports.backgroundImageFile = path.join('.', 'background.jpg');
 
 module.exports.router = (req, res, next = ()=>{}) => {
   console.log('Serving request type ' + req.method + ' for url ' + req.url);
+  if(req.method === 'OPTIONS') {
+  } else if(req.method === 'GET') {
+    res.write('left');
+  }
   res.writeHead(200, headers);
-  res.write('\n');
-  res.write('left');
+  // res.write('\n');
   // console.log(res);
   res.end();
 };
