@@ -54,7 +54,7 @@
     $.ajax({
       type: 'POST',
       data: formData,
-      url: serverUrl + '/poolImage',
+      url: serverUrl,
       cache: false,
       contentType: false,
       processData: false,
